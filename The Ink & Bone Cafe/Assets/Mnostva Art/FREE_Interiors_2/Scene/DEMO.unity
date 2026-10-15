@@ -2888,7 +2888,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 4ec6fc62cb6fd7e41b02963ea4d079ae, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2952,6 +2952,7 @@ MonoBehaviour:
   chair: {fileID: 1913749558}
   sensor: {fileID: 1023140167}
   detected: 0
+  queueBack: {fileID: 1580913925}
 --- !u!114 &1023140167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4244,7 +4245,7 @@ Transform:
   m_GameObject: {fileID: 1396477872}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.9, y: 1.094, z: -3.21}
+  m_LocalPosition: {x: 1.522, y: 1.094, z: -2.303}
   m_LocalScale: {x: 0.7033494, y: 0.8779484, z: 0.7033494}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5195,6 +5196,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1aa81bca8a883c34293bafd8f4ff79f2, type: 3}
+--- !u!1 &1580913925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1580913926}
+  m_Layer: 0
+  m_Name: Queue_Back
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1580913926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580913925}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.975, y: 1.094, z: -2.888}
+  m_LocalScale: {x: 1.7853707, y: 27.202967, z: 3.9048057}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1607211916
 GameObject:
   m_ObjectHideFlags: 0
@@ -6317,3 +6349,4 @@ SceneRoots:
   - {fileID: 1437706643}
   - {fileID: 1396477877}
   - {fileID: 1023140165}
+  - {fileID: 1580913926}

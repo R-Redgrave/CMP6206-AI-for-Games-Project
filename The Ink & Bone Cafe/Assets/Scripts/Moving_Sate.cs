@@ -20,7 +20,7 @@ public class MovingState : State
         if (owner.seek_me == null)
             return;
 
-        if (owner.sensor != null && owner.sensor.detected)
+        if (owner.sensor != null && owner.sensor.detected && owner.seek_me !=owner.queueBack)
             return;
 
         Vector3 direction = owner.seek_me.transform.position

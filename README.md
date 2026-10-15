@@ -49,26 +49,54 @@ There have been some complications with the seating arrangements.
 
 Reginald has been informed.
 
-AI Implementation
+AI Implementation:
 
-Finite State Machine (FSM)
+- Finite State Machine (FSM)
+- Idle and Moving states
+- Distance checking using Vector3.Distance()
+- State transitions based on the customer's distance from their destination
 
-Idle and Moving states
+Problems Encountered:
 
-Distance checking using Vector3.Distance()
-
-State transitions based on the customer's distance from their destination
-
-Problems Encountered
-
-The customer initially moved towards the chair before reaching the till. This highlighted a problem with how the destination and state changes were being handled.
-
+ - The customer initially moved towards the chair before reaching the till. This highlighted a problem with how the destination and state changes were being handled.
 
 
 Next Steps
 
-Continue developing the customer's behaviour.
+ - Continue developing the customer's behaviour.
 
 
-*Record 002: *
+*Record 002: A Queueing lesson*
+----------------------------------------
+
+the Cafe's new customer had a concerning habit of walking straight towards the till, regardless of who happens to be standing in the way.
+
+Apparently, queuing etiuettte doesn't come installed in everyone.
+
+A Box sensor has now been introduced, this allows the customer to detect others and respond accordingly. After several unsuccessful attempts, the customer can finally recognise when someone is in front of them and moes towards the back of the queue.
+
+Reginald has been informed.
+
+AI implementation:
+
+ - Agent sensor that used Physics.CheckBox()
+ - Customer detection layer.
+ - Sensor intergration along side exisiting FSM.
+ - Destination changes towards a designated queue position.
+
+
+ Problems encountered:
+
+  - the sensor initally failed. Increased the detection box range which resolved the issue.
+  - the customer stopped moving when detecting another scustomer. This was fixed by adjusting the movement conditions.
+
+
+next steps:
+
+ - Refine queue position.
+ - Teach customers to advance once served / queue moves.
+ - Continue developiong customer decision-mkaing,.
+
+
+*Record 003: *
 ----------------------------------------
