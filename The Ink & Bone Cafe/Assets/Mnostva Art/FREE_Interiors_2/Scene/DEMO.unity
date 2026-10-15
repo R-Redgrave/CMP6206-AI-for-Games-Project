@@ -2832,6 +2832,7 @@ GameObject:
   - component: {fileID: 1023140163}
   - component: {fileID: 1023140162}
   - component: {fileID: 1023140166}
+  - component: {fileID: 1023140167}
   m_Layer: 0
   m_Name: Customer 01 -AI
   m_TagString: Untagged
@@ -2949,6 +2950,23 @@ MonoBehaviour:
   speed: 2
   seek_me: {fileID: 1632022398}
   chair: {fileID: 1913749558}
+--- !u!114 &1023140167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023140160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2dbedf798fbcd04493c98d784582ade, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Box_Cast
+  distance: 1.5
+  boxsize: {x: 4, y: 2, z: 4}
+  customerLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &1032350472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5187,8 +5205,8 @@ GameObject:
   - component: {fileID: 1607211919}
   - component: {fileID: 1607211918}
   - component: {fileID: 1607211917}
-  m_Layer: 0
-  m_Name: Capsule McBrista - Player (1)
+  m_Layer: 6
+  m_Name: Customer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
