@@ -7,6 +7,8 @@ public class Customer_01 : MonoBehaviour
     public float speed = 2.0f;
     public GameObject seek_me;
     public GameObject chair;
+    public customer_Sensor sensor;
+    public bool detected;
 
     State_Manager sm = new State_Manager();
     bool state_change = false;

@@ -2950,6 +2950,8 @@ MonoBehaviour:
   speed: 2
   seek_me: {fileID: 1632022398}
   chair: {fileID: 1913749558}
+  sensor: {fileID: 1023140167}
+  detected: 0
 --- !u!114 &1023140167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2967,6 +2969,7 @@ MonoBehaviour:
   customerLayer:
     serializedVersion: 2
     m_Bits: 64
+  detected: 0
 --- !u!1001 &1032350472
 PrefabInstance:
   m_ObjectHideFlags: 0

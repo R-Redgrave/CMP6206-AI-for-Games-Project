@@ -5,11 +5,12 @@ public class customer_Sensor : MonoBehaviour
     public float distance = 1.5f;
     public Vector3 boxsize = new Vector3(1f, 1f, 1f);
     public LayerMask customerLayer;
+    public bool detected;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     //void Start()
     //{
-        
+
     //}
 
     // Update is called once per frame
@@ -17,7 +18,7 @@ public class customer_Sensor : MonoBehaviour
     {
         Vector3 boxPosition = transform.position + transform.forward * distance;
 
-        bool deteced = Physics.CheckBox
+        detected = Physics.CheckBox
             (
                 boxPosition,
                 boxsize / 2,
@@ -25,6 +26,11 @@ public class customer_Sensor : MonoBehaviour
                 customerLayer
             );
 
-        Debug.Log("Sensor working: " + deteced);
+        //Debug.Log("Sensor working: " + deteced);
+
+        if (detected)
+        {
+            Debug.Log("Customer detected");
+        }
     }
 }
