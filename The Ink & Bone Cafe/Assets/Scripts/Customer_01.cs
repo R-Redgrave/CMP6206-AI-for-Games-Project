@@ -38,13 +38,13 @@ public class Customer_01 : MonoBehaviour
             seek_me.transform.position
         );
 
-        if (distance > 0.2f && !state_change)
+        if (distance > 0.5f && !state_change)
         {
             sm.ChangeState(new MovingState(this));
             state_change = true;
         }
 
-        if (distance <= 0.2f && state_change)
+        if (distance <= 0.5f && state_change)
         {
             sm.ChangeState(new Idle_State(this));
             state_change = false;
