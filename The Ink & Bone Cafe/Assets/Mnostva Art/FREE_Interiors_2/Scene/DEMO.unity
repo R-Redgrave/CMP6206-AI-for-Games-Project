@@ -948,6 +948,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a101a195e5fbc949bb922e87777de78, type: 3}
+--- !u!1 &416138561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 416138562}
+  m_Layer: 0
+  m_Name: CoffeePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &416138562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416138561}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.545, y: 1.482, z: -6.128}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &498542059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2754,10 +2785,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 973030002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42280fdd9f126a242adfa3ba97e54a78, type: 3}
+  m_Script: {fileID: 11500000, guid: 40ed17f2208c9f842b2bc0aa922f37d5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 5
+  m_EditorClassIdentifier: Assembly-CSharp::Mcbrista_AI
+  tillPoint: {fileID: 1739625471}
+  CoffeePoint: {fileID: 416138562}
+  speed: 2
+  ordertaken: 0
+  waitTimer: 0
+  waittime: 3
 --- !u!1001 &1019904420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5689,6 +5725,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baf587367d5f44f46b9920d7c1e3964f, type: 3}
+--- !u!1 &1739625470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1739625471}
+  m_Layer: 0
+  m_Name: TillPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1739625471
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739625470}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.916, y: 1.223, z: -4.966}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1743422381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6350,3 +6417,5 @@ SceneRoots:
   - {fileID: 1396477877}
   - {fileID: 1023140165}
   - {fileID: 1580913926}
+  - {fileID: 1739625471}
+  - {fileID: 416138562}
