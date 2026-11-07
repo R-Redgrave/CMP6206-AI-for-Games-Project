@@ -100,3 +100,12 @@ next steps:
 
 *Record 003: *
 ----------------------------------------
+
+CMP6206 week 7 - GOAP: goals, Actions, Preconditions, effects and Planning.
+https://learn.unity.com/tutorial/arrays-9o
+https://learn.unity.com/tutorial/loops-z2b
+https://learn.unity.com/course/beginner-scripting
+https://docs.unity.com/en-us/engine/6000.0/script-reference/unityengine/time/deltatime
+https://docs.unity.com/en-us/engine/6000.0/script-reference/unityengine/serializefield
+https://docs.unity.com/en-us/engine/6000.0/script-reference/unityengine/vector3/movetowards
+Accessed on 07/11/2026
