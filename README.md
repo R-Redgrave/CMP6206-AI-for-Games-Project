@@ -98,7 +98,7 @@ next steps:
  - Continue developiong customer decision-mkaing,.
 
 
-*Record 003: *
+*Record 003: McBrista's First Shift: GOAP in progress *
 ----------------------------------------
 
 CMP6206 week 7 - GOAP: goals, Actions, Preconditions, effects and Planning.
