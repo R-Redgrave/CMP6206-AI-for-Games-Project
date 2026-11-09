@@ -1,5 +1,22 @@
 using UnityEngine;
 
+/*GOAP Goal: Serve the customer coffee.
+
+Actions Mcbrista can choose:
+1. Take the customer's order.
+2. Make the coffee.
+3. Deliver the coffee.
+
+Backward planner if coffee not made
+ Plan [2] = TakeOrder
+ Plan [1] = Makecoffee
+ Plan [0] = Delivercoffee
+
+/*Backward planner if coffee made
+ Plan [2] = TakeOrder
+ Plan [1] = CollectCoffee
+ Plan [0] = Delivercoffee */
+
 public class Mcbrista_AI : MonoBehaviour
 {
     // Please tidy up your code!
@@ -94,42 +111,95 @@ public class Mcbrista_AI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //McBrista walks to the till
-        if (tillPoint != null && ordertaken == false) // has destination been assigned?
+
+        //Plan for McBrista to follow.
+        //Are there anymore actions to deliver the coffee or has Mcbrista delivered and can stop?
+        if (step < 0 || coffeeDelivered)
+            return;
+
+        // Mcbrista will check which action needs to move to next.
+        string action = plan[step];
+
+        //Mcbrista will head to the till unless he needs to be at the coffee machine.
+        Transform destination = tillPoint;
+
+
+        if (action == "MakeCoffee" || action == "CoffeeCollect")
         {
-            transform.position = Vector3.MoveTowards // moves Mcbrista to the destination  
-                (transform.position,
-                  tillPoint.position, 
-                  speed * Time.deltaTime
-                );
+            destination = CoffeePoint;
         }
 
-        //McBrista takes the order
-        if (Vector3.Distance(transform.position, tillPoint.position) < 0.2f && ordertaken == false)
+        if (destination == null)
+            return;
+
+        transform.position = Vector3.MoveTowards
+        (
+            transform.position,
+            destination.position,
+            speed*Time.deltaTime
+        );
+
+
+        //Is Mcbrista close enough to the destination?
+        if (Vector3.Distance(transform.position, destination.position) < 0.2f)
         {
             waitTimer += Time.deltaTime;
 
             if (waitTimer >= waittime)
             {
-                ordertaken = true;
-                Debug.Log("Mcbristia: Order taken!");
+                if (action == "TakeOrder")
+                    ordertaken = true;
+
+                if (action == "MakeCoffee")
+                    coffeeMade = true;
+
+                if (action == "CollectCoffee")
+                {
+                    coffeeMade = true;
+                    coffeeReady = false;
+                }
+                if (action == "DeliverCoffee")
+                {
+                    coffeeDelivered = true;
+                    Debug.Log("Mcbrista completed " + action);
+                }
+
+
+                //Indicates job is complete and can move to the next action.
+                waitTimer = 0f;
+                    step--;
             }
         }
+        ////McBrista walks to the till
+        //if (tillPoint != null && ordertaken == false) // has destination been assigned?
+        //{
+        //    transform.position = Vector3.MoveTowards // moves Mcbrista to the destination  
+        //        (transform.position,
+        //          tillPoint.position, 
+        //          speed * Time.deltaTime
+        //        );
+        //}
 
-        //Order taken. McBrista relectantly heads to the coffee machine.
-        if (CoffeePoint != null && ordertaken == true) // has destination been assigned?
-        {
-            transform.position = Vector3.MoveTowards // moves Mcbrista to the destination
-                (transform.position,
-                  CoffeePoint.position,
-                  speed * Time.deltaTime
-                );
-        }
+        ////McBrista takes the order
+        //if (Vector3.Distance(transform.position, tillPoint.position) < 0.2f && ordertaken == false)
+        //{
+        //    waitTimer += Time.deltaTime;
+
+        //    if (waitTimer >= waittime)
+        //    {
+        //        ordertaken = true;
+        //        Debug.Log("Mcbristia: Order taken!");
+        //    }
+        //}
+
+        ////Order taken. McBrista relectantly heads to the coffee machine.
+        //if (CoffeePoint != null && ordertaken == true) // has destination been assigned?
+        //{
+        //    transform.position = Vector3.MoveTowards // moves Mcbrista to the destination
+        //        (transform.position,
+        //          CoffeePoint.position,
+        //          speed * Time.deltaTime
+        //        );
+        //}
     }
 }
-/*GOAP Goal: Serve the customer coffee.
-
-Actions Mcbrista can choose:
-1. Take the customer's order.
-2. Make the coffee.
-3. Deliver the coffee.*/

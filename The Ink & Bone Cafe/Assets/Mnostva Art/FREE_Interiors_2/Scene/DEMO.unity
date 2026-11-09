@@ -2791,7 +2791,10 @@ MonoBehaviour:
   tillPoint: {fileID: 1739625471}
   CoffeePoint: {fileID: 416138562}
   speed: 2
-  ordertaken: 0
+  ordertaken: 1
+  coffeeReady: 1
+  coffeeMade: 0
+  coffeeDelivered: 0
   waitTimer: 0
   waittime: 3
 --- !u!1001 &1019904420
