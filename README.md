@@ -146,5 +146,5 @@ CMP6206 week 7, page 10
 CMP6206 week 7, page 13
 Accessed on 08/11/2026
 
-Aversa, D. (2018) 'Choosing between Behavior Tree and GOAP (Planning)', Davide Aversa, 13 February. Available at: http://davideaversa.it/blog/choosing-behavior-tree-goap-planning/ 
+Aversa, D. (2018) 'Choosing between Behavior Tree and GOAP, Davide Aversa, 13 February. Available at: http://davideaversa.it/blog/choosing-behavior-tree-goap-planning/ 
 Accessed: 11 November 2026.
