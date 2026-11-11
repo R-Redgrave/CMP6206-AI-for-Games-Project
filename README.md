@@ -98,11 +98,39 @@ next steps:
  - Continue developiong customer decision-mkaing,.
 
 
-*Record 003: McBrista's First Shift: GOAP in progress *
+*Record 003: McBrista's First Shift: GOAP  *
 ----------------------------------------
 
+McBrista has finally managed to make and deliver a coffee. Took a few attempts and 29 errors, but we got there.
 
-References:
+AI Implementation:
+ - Implemented a basic backward GOAP planner using arrays to store actions, preconditions and effects.
+ - Used world-state variables to check whether orders have been taken and coffee is ready.
+ - Connected the planner to McBrista's movement so he can carry out the selected actions.
+ - Tested skipping the order-taking action when an order has already been placed.
+ - Used Vector3.MoveTowards() and invisible GameObjects for destinations.
+
+Problems encountered:
+ - Several misplaced brackets caused 29 errors.
+ - Naming inconsistencies stopped certain actions from completing.
+ - Debugging helped identify why coffee delivery wasn't being recorded.
+
+Evaluation:
+ - Although GOAP works for McBrista, I'm questioning whether it's the best choice for his role.
+ - His tasks are fairly predictable, and an FSM or Behaviour Tree could probably handle them with less complexity. GOAP might be better suited to a café employee with several different jobs, where the AI needs to decide what to do depending on the situation.
+
+Next steps:
+ - Test the alternative CollectCoffee action ot adding another order.
+ - Investigate Behaviour Trees as a possible alternative for McBrista.
+ - Consider using GOAP for an NPC with more varied responsibilities.
+
+Limitations / Future Improvements:
+ - McBrista can plan the actions needed to complete an order, but doesn't calculate which approach is the most efficient.
+ - Action costs haven't been implemented, so he can't compare different plans based on time or effort.
+ - The planner only runs at the start. If something changes halfway through, McBrista won't adjust his plan.
+ - GOAP might be better suited to an NPC with more varied jobs. For McBrista's fairly predictable routine, a Behaviour Tree or FSM could be better suited for extra contol over NPC actions.
+
+ GOAP might be better suited to an NPC with more varied jobs. For McBrista's fairly predictable routine, a Behaviour Tree or FSM could be simplerMcBrista has finally managed to make and deliver a coffee. Took a few attempts and 29 errors, but we got there.
 
 CMP6206 week 7 - GOAP: goals, Actions, Preconditions, effects and Planning.
 https://learn.unity.com/tutorial/arrays-9o
@@ -117,3 +145,6 @@ CMP6206 week 7, page 8
 CMP6206 week 7, page 10
 CMP6206 week 7, page 13
 Accessed on 08/11/2026
+
+Aversa, D. (2018) 'Choosing between Behavior Tree and GOAP (Planning)', Davide Aversa, 13 February. Available at: http://davideaversa.it/blog/choosing-behavior-tree-goap-planning/ 
+Accessed: 11 November 2026.
