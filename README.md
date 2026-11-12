@@ -8,6 +8,8 @@
 
     Current features:
     1. FSM
+    2. Behaviour Trees
+    3. GOAP (basic)
 
 3. Target game engine - Note: you should add an appropriate .gitignore file for the game engine you are using so you don't end up uploading extraneous files that increase the size of the repo.  There are .gitignore files for Unity and Unreal, and other game engines, available from https://github.com/github/gitignore.  For C++ using Visual Studio use the Visual Studio .gitignore but note that it needs some modification as .lib files necessary for building a C++ project are ignored by default.
 
@@ -39,7 +41,7 @@ This Unity project explores artificial intelligence techniques through the behav
 
 The development process will be documented through a series of records, covering implemented AI techniques, testing, unexpected behaviour and lessons learned.
 
- - Development Records
+ - *Development Records*
 
 *Record 001: The First Customer*
 ----------------------------------------
@@ -148,3 +150,48 @@ Accessed on 08/11/2026
 
 Aversa, D. (2018) 'Choosing between Behavior Tree and GOAP, Davide Aversa, 13 February. Available at: http://davideaversa.it/blog/choosing-behavior-tree-goap-planning/ 
 Accessed: 11 November 2026.
+
+*Record 004: Elanor A Matter Of Housekeeping: Behaviour Trees  *
+----------------------------------------
+
+Very little escapes Elanor's attention at he Ink & Bone Cafe.
+
+Customers come and go, leaving behind empty cups and the occasional mess. Nothing out fo the ordinary for a cafe. Although, oridanry is hardly a word one would use to describe this palce.
+
+Elanor has always kept a watchful eye on her surroundings, noticing things others tend to ovcerlook. With the introduction of a Behavior Tree, she can now attend to the tables without being instructed. She searches for anything that needs cleaning, approaches the atables, removes the item and quietly returns to her usual position.
+
+Two seperate messes have now been delt with. both without incident.
+
+Reginald appricaited a tidy establishment. After all, there are far more pressing matters requiring his attention.
+
+
+AI Implementation:
+ - Created Elanor's BT using Unity Behavior.
+ - Sequence nodes control the order of her actions, while Try In Order decides whether she cleans or remains Idle.
+ - Objects tagged NeedsCleaning are recoginised as cleaning targets.
+ - Elanor can move towards both targets, clean them and return to her Idle position.
+ - Tested.
+
+Problems:
+ - Struggled to link Blackboard varibles and correct nodes.
+ - Originally Elanor stayed at the same table after cleaning because she hadn't been given a return point / command.
+ - Fixed with IdlePoint.
+
+Next steps:
+ - Usinge C# scripting to customise acrtions and conditions.
+ - Connect cleaning behavior to the customers so they can leave cups behind when leaving.
+ - Work on navigation to move around the furniture instead of walking through the.
+
+
+Sources:
+
+ - CMP6206, Lecture 6: Behaviour Trees (2026). Your university lecture slides, covering Sequence, Fallback, Blackboard variables and action nodes. Accessed on 12/11/2026
+ - Unity Technologies – Creating a Behavior Graph https://docs.unity.cn/Packages/com.unity.behavior@1.0/manual/create-behavior-graph Accessed on 12/11/20026
+ - Unity Technologies – Behavior Graph Node Types https://docs.unity.cn/Packages/com.unity.behavior@1.0/manual/node-types Accessed on 12/11/2026
+ - Millington, I. (2019). AI for Games, 3rd edition. Section 5.4: Behavior Trees Accessed on 12/11/2026
+
+
+ - *The Method Behind the Madness*
+
+*AI selection and Reasoning *
+----------------------------------------
